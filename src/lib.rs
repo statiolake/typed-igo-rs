@@ -85,7 +85,7 @@ macro_rules! define_enum {
             @enum $enum
             @at $at
             @argfeatures $argfeatures
-            @fields [$($fields)* (@value ($value) @ident ($($ident)*) @child (($($ident)*)) @parsechild (($($ident)*::parse($argfeatures))))]
+            @fields [$($fields)* (@value ($value) @ident ($($ident)*) @child (($($ident)*)) @parsechild (($($ident)*::parse($argfeatures).expect("failed to parse child"))))]
             @value ()
             @rest $($rest)*
         }
@@ -122,6 +122,7 @@ macro_rules! define_enum {
 
         impl ::std::fmt::Display for $enum {
             fn fmt(&self, b: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                #[allow(unused_variables, non_snake_case)]
                 match self {
                     $(
                         $enum::$($ident)* $($child)* => ::std::fmt::Write::write_str(b, $value),
@@ -153,13 +154,13 @@ pub struct Morpheme<'s, 'f> {
     pub start: usize,
 }
 
-impl<'s, 'f> From<IgoMorpheme<'s, 'f>> for Morpheme<'s, 'f> {
-    fn from(from: IgoMorpheme<'s, 'f>) -> Morpheme<'s, 'f> {
+impl<'s, 'f> From<IgoMorpheme<'f, 's>> for Morpheme<'s, 'f> {
+    fn from(from: IgoMorpheme<'f, 's>) -> Morpheme<'s, 'f> {
         let surface = from.surface;
         let start = from.start;
         let features: Vec<_> = from.feature.split(',').collect();
         let word_class = WordClass::parse(&*features).expect("failed to parse WordClass");
-        let conjugation = Conjugation::parse(&*features);
+        let conjugation = Conjugation::parse(&*features).expect("failed to parse Conjugation");
         let original_form = features[6];
         let reading = features[7];
         let pronunciation = features[8];
