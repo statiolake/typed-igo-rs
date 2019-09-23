@@ -1,3 +1,5 @@
+#![recursion_limit = "1024"]
+
 use igo::Morpheme as IgoMorpheme;
 
 macro_rules! define_enum {
@@ -138,7 +140,7 @@ macro_rules! define_enum {
 }
 
 include!("conjugation.rs");
-include!("word_class.rs");
+include!("wordclass.rs");
 
 #[derive(Debug)]
 pub struct Morpheme<'s, 'f> {

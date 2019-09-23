@@ -1,1151 +1,1133 @@
-pub mod *活用* {
-    pub mod *カ変・クル* {
+pub mod conjugation {
+    pub mod kahen_kuru {
         define_enum! {
-            pub enum #カ変・クル# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
-                "命令ｉ" => #命令ｉ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "体言接続特殊" => #体言接続特殊#,
-                "体言接続特殊２" => #体言接続特殊２#,
+            pub enum KahenKuru features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
+                "命令ｉ" => ImperativeI,
+                "仮定縮約１" => ConditionalContraction1,
+                "体言接続特殊" => SpecialAttributive,
+                "体言接続特殊２" => SpecialAttributive2,
             }
         }
     }
-    pub use self::*カ変・クル*::#カ変・クル#;
+    pub use self::kahen_kuru::KahenKuru;
 
-    pub mod *カ変・来ル* {
+    pub mod kahen_kuru_kanji {
         define_enum! {
-            pub enum #カ変・来ル# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
-                "命令ｉ" => #命令ｉ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "体言接続特殊" => #体言接続特殊#,
-                "体言接続特殊２" => #体言接続特殊２#,
+            pub enum KahenKuruKanji features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
+                "命令ｉ" => ImperativeI,
+                "仮定縮約１" => ConditionalContraction1,
+                "体言接続特殊" => SpecialAttributive,
+                "体言接続特殊２" => SpecialAttributive2,
             }
         }
     }
-    pub use self::*カ変・来ル*::#カ変・来ル#;
+    pub use self::kahen_kuru_kanji::KahenKuruKanji;
 
-    pub mod *サ変・スル* {
+    pub mod sahen_suru {
         define_enum! {
-            pub enum #サ変・スル# features[5] {
-                "基本形" => #基本形#,
-                "文語基本形" => #文語基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "未然ウ接続" => #未然ウ接続#,
-                "未然レル接続" => #未然レル接続#,
-                "未然ヌ接続" => #未然ヌ接続#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
-                "命令ｒｏ" => #命令ｒｏ#,
-                "命令ｉ" => #命令ｉ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "体言接続特殊" => #体言接続特殊#,
-                "体言接続特殊２" => #体言接続特殊２#,
+            pub enum SahenSuru features[5] {
+                "基本形" => Basic,
+                "文語基本形" => OldBasic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "未然レル接続" => NegativeReru,
+                "未然ヌ接続" => NegativeNu,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
+                "命令ｒｏ" => ImperativeRo,
+                "命令ｉ" => ImperativeI,
+                "仮定縮約１" => ConditionalContraction1,
+                "体言接続特殊" => SpecialAttributive,
+                "体言接続特殊２" => SpecialAttributive2,
             }
         }
     }
-    pub use self::*サ変・スル*::#サ変・スル#;
+    pub use self::sahen_suru::SahenSuru;
 
-    pub mod *サ変・－スル* {
+    pub mod sahen_suru_connected {
         define_enum! {
-            pub enum #サ変・－スル# features[5] {
-                "基本形" => #基本形#,
-                "文語基本形" => #文語基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "未然ウ接続" => #未然ウ接続#,
-                "未然レル接続" => #未然レル接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
-                "命令ｒｏ" => #命令ｒｏ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum SahenSuruConnected features[5] {
+                "基本形" => Basic,
+                "文語基本形" => OldBasic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "未然レル接続" => NegativeReru,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
+                "命令ｒｏ" => ImperativeRo,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*サ変・－スル*::#サ変・－スル#;
+    pub use self::sahen_suru_connected::SahenSuruConnected;
 
-    pub mod *サ変・－ズル* {
+    pub mod sahen_zuru_connected {
         define_enum! {
-            pub enum #サ変・－ズル# features[5] {
-                "基本形" => #基本形#,
-                "文語基本形" => #文語基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum SahenZuruConnected features[5] {
+                "基本形" => Basic,
+                "文語基本形" => OldBasic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*サ変・－ズル*::#サ変・－ズル#;
+    pub use self::sahen_zuru_connected::SahenZuruConnected;
 
-    pub mod *一段* {
+    pub mod ichidan {
         define_enum! {
-            pub enum #一段# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
-                "命令ｒｏ" => #命令ｒｏ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "体言接続特殊" => #体言接続特殊#,
+            pub enum Ichidan features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
+                "命令ｒｏ" => ImperativeRo,
+                "仮定縮約１" => ConditionalContraction1,
+                "体言接続特殊" => SpecialAttributive,
             }
         }
     }
-    pub use self::*一段*::#一段#;
+    pub use self::ichidan::Ichidan;
 
-    pub mod *一段・病メル* {
+    pub mod ichidan_yameru {
         define_enum! {
-            pub enum #一段・病メル# features[5] {
-                "基本形" => #基本形#,
+            pub enum IchidanYameru features[5] {
+                "基本形" => Basic,
             }
         }
     }
-    pub use self::*一段・病メル*::#一段・病メル#;
+    pub use self::ichidan_yameru::IchidanYameru;
 
-    pub mod *五段・カ行イ音便* {
+    pub mod godan_ka_ionbin {
         define_enum! {
-            pub enum #五段・カ行イ音便# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanKaIonbin features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・カ行イ音便*::#五段・カ行イ音便#;
+    pub use self::godan_ka_ionbin::GodanKaIonbin;
 
-    pub mod *五段・カ行促音便* {
+    pub mod godan_ka_sokuonbin {
         define_enum! {
-            pub enum #五段・カ行促音便# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanKaSokuonbin features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・カ行促音便*::#五段・カ行促音便#;
+    pub use self::godan_ka_sokuonbin::GodanKaSokuonbin;
 
-    pub mod *五段・カ行促音便ユク* {
+    pub mod godan_ka_sokuonbin_yuku {
         define_enum! {
-            pub enum #五段・カ行促音便ユク# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanKaSokuonbinYuku features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・カ行促音便ユク*::#五段・カ行促音便ユク#;
+    pub use self::godan_ka_sokuonbin_yuku::GodanKaSokuonbinYuku;
 
-    pub mod *五段・ガ行* {
+    pub mod godan_ga {
         define_enum! {
-            pub enum #五段・ガ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanGa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・ガ行*::#五段・ガ行#;
+    pub use self::godan_ga::GodanGa;
 
-    pub mod *五段・サ行* {
+    pub mod godan_sa {
         define_enum! {
-            pub enum #五段・サ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanSa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・サ行*::#五段・サ行#;
+    pub use self::godan_sa::GodanSa;
 
-    pub mod *五段・タ行* {
+    pub mod godan_ta {
         define_enum! {
-            pub enum #五段・タ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanTa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・タ行*::#五段・タ行#;
+    pub use self::godan_ta::GodanTa;
 
-    pub mod *五段・ナ行* {
+    pub mod godan_na {
         define_enum! {
-            pub enum #五段・ナ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanNa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・ナ行*::#五段・ナ行#;
+    pub use self::godan_na::GodanNa;
 
-    pub mod *五段・バ行* {
+    pub mod godan_ba {
         define_enum! {
-            pub enum #五段・バ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanBa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・バ行*::#五段・バ行#;
+    pub use self::godan_ba::GodanBa;
 
-    pub mod *五段・マ行* {
+    pub mod godan_ma {
         define_enum! {
-            pub enum #五段・マ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanMa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・マ行*::#五段・マ行#;
+    pub use self::godan_ma::GodanMa;
 
-    pub mod *五段・ラ行* {
+    pub mod godan_ra {
         define_enum! {
-            pub enum #五段・ラ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然特殊" => #未然特殊#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "体言接続特殊" => #体言接続特殊#,
-                "体言接続特殊２" => #体言接続特殊２#,
+            pub enum GodanRa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然特殊" => NegativeSpecial,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
+                "体言接続特殊" => SpecialAttributive,
+                "体言接続特殊２" => SpecialAttributive2,
             }
         }
     }
-    pub use self::*五段・ラ行*::#五段・ラ行#;
+    pub use self::godan_ra::GodanRa;
 
-    pub mod *五段・ラ行アル* {
+    pub mod godan_ra_aru {
         define_enum! {
-            pub enum #五段・ラ行アル# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "体言接続特殊" => #体言接続特殊#,
+            pub enum GodanRaAru features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
+                "体言接続特殊" => SpecialAttributive,
             }
         }
     }
-    pub use self::*五段・ラ行アル*::#五段・ラ行アル#;
+    pub use self::godan_ra_aru::GodanRaAru;
 
-    pub mod *五段・ラ行特殊* {
+    pub mod godan_ra_special {
         define_enum! {
-            pub enum #五段・ラ行特殊# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然特殊" => #未然特殊#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "命令ｉ" => #命令ｉ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum GodanRaSpecial features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然特殊" => NegativeSpecial,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "命令ｉ" => ImperativeI,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*五段・ラ行特殊*::#五段・ラ行特殊#;
+    pub use self::godan_ra_special::GodanRaSpecial;
 
-    pub mod *五段・ワ行ウ音便* {
+    pub mod godan_wa_uonbin {
         define_enum! {
-            pub enum #五段・ワ行ウ音便# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum GodanWaUonbin features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*五段・ワ行ウ音便*::#五段・ワ行ウ音便#;
+    pub use self::godan_wa_uonbin::GodanWaUonbin;
 
-    pub mod *五段・ワ行促音便* {
+    pub mod godan_wa_sokuonbin {
         define_enum! {
-            pub enum #五段・ワ行促音便# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum GodanWaSokuonbin features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*五段・ワ行促音便*::#五段・ワ行促音便#;
+    pub use self::godan_wa_sokuonbin::GodanWaSokuonbin;
 
-    pub mod *四段・カ行* {
+    pub mod yodan_ka {
         define_enum! {
-            pub enum #四段・カ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum YodanKa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*四段・カ行*::#四段・カ行#;
+    pub use self::yodan_ka::YodanKa;
 
-    pub mod *四段・ガ行* {
+    pub mod yodan_ga {
         define_enum! {
-            pub enum #四段・ガ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum YodanGa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*四段・ガ行*::#四段・ガ行#;
+    pub use self::yodan_ga::YodanGa;
 
-    pub mod *四段・サ行* {
+    pub mod yodan_sa {
         define_enum! {
-            pub enum #四段・サ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum YodanSa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*四段・サ行*::#四段・サ行#;
+    pub use self::yodan_sa::YodanSa;
 
-    pub mod *四段・タ行* {
+    pub mod yodan_ta {
         define_enum! {
-            pub enum #四段・タ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum YodanTa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*四段・タ行*::#四段・タ行#;
+    pub use self::yodan_ta::YodanTa;
 
-    pub mod *四段・バ行* {
+    pub mod yodan_ba {
         define_enum! {
-            pub enum #四段・バ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum YodanBa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*四段・バ行*::#四段・バ行#;
+    pub use self::yodan_ba::YodanBa;
 
-    pub mod *四段・マ行* {
+    pub mod yodan_ma {
         define_enum! {
-            pub enum #四段・マ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum YodanMa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*四段・マ行*::#四段・マ行#;
+    pub use self::yodan_ma::YodanMa;
 
-    pub mod *四段・ラ行* {
+    pub mod yodan_ra {
         define_enum! {
-            pub enum #四段・ラ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum YodanRa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*四段・ラ行*::#四段・ラ行#;
+    pub use self::yodan_ra::YodanRa;
 
-    pub mod *四段・ハ行* {
+    pub mod yodan_ha {
         define_enum! {
-            pub enum #四段・ハ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum YodanHa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*四段・ハ行*::#四段・ハ行#;
+    pub use self::yodan_ha::YodanHa;
 
-    pub mod *ラ変* {
+    pub mod rahen {
         define_enum! {
-            pub enum #ラ変# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum Rahen features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*ラ変*::#ラ変#;
+    pub use self::rahen::Rahen;
 
-    pub mod *上二・ダ行* {
+    pub mod kamini_da {
         define_enum! {
-            pub enum #上二・ダ行# features[5] {
-                "基本形" => #基本形#,
-                "現代基本形" => #現代基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum KaminiDa features[5] {
+                "基本形" => Basic,
+                "現代基本形" => ModernBasic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*上二・ダ行*::#上二・ダ行#;
+    pub use self::kamini_da::KaminiDa;
 
-    pub mod *上二・ハ行* {
+    pub mod kamini_ha {
         define_enum! {
-            pub enum #上二・ハ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum KaminiHa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*上二・ハ行*::#上二・ハ行#;
+    pub use self::kamini_ha::KaminiHa;
 
-    pub mod *下二・ア行* {
+    pub mod shimoni_a {
         define_enum! {
-            pub enum #下二・ア行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniA features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ア行*::#下二・ア行#;
+    pub use self::shimoni_a::ShimoniA;
 
-    pub mod *下二・カ行* {
+    pub mod shimoni_ka {
         define_enum! {
-            pub enum #下二・カ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniKa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・カ行*::#下二・カ行#;
+    pub use self::shimoni_ka::ShimoniKa;
 
-    pub mod *下二・ガ行* {
+    pub mod shimoni_ga {
         define_enum! {
-            pub enum #下二・ガ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniGa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ガ行*::#下二・ガ行#;
+    pub use self::shimoni_ga::ShimoniGa;
 
-    pub mod *下二・サ行* {
+    pub mod shimoni_sa {
         define_enum! {
-            pub enum #下二・サ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniSa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・サ行*::#下二・サ行#;
+    pub use self::shimoni_sa::ShimoniSa;
 
-    pub mod *下二・ザ行* {
+    pub mod shimoni_za {
         define_enum! {
-            pub enum #下二・ザ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniZa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ザ行*::#下二・ザ行#;
+    pub use self::shimoni_za::ShimoniZa;
 
-    pub mod *下二・タ行* {
+    pub mod shimoni_ta {
         define_enum! {
-            pub enum #下二・タ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniTa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・タ行*::#下二・タ行#;
+    pub use self::shimoni_ta::ShimoniTa;
 
-    pub mod *下二・ダ行* {
+    pub mod shimoni_da {
         define_enum! {
-            pub enum #下二・ダ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniDa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ダ行*::#下二・ダ行#;
+    pub use self::shimoni_da::ShimoniDa;
 
-    pub mod *下二・ナ行* {
+    pub mod shimoni_na {
         define_enum! {
-            pub enum #下二・ナ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniNa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ナ行*::#下二・ナ行#;
+    pub use self::shimoni_na::ShimoniNa;
 
-    pub mod *下二・ハ行* {
+    pub mod shimoni_ha {
         define_enum! {
-            pub enum #下二・ハ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniHa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ハ行*::#下二・ハ行#;
+    pub use self::shimoni_ha::ShimoniHa;
 
-    pub mod *下二・バ行* {
+    pub mod shimoni_ba {
         define_enum! {
-            pub enum #下二・バ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniBa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・バ行*::#下二・バ行#;
+    pub use self::shimoni_ba::ShimoniBa;
 
-    pub mod *下二・マ行* {
+    pub mod shimoni_ma {
         define_enum! {
-            pub enum #下二・マ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniMa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・マ行*::#下二・マ行#;
+    pub use self::shimoni_ma::ShimoniMa;
 
-    pub mod *下二・ヤ行* {
+    pub mod shimoni_ya {
         define_enum! {
-            pub enum #下二・ヤ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniYa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ヤ行*::#下二・ヤ行#;
+    pub use self::shimoni_ya::ShimoniYa;
 
-    pub mod *下二・ラ行* {
+    pub mod shimoni_ra {
         define_enum! {
-            pub enum #下二・ラ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniRa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ラ行*::#下二・ラ行#;
+    pub use self::shimoni_ra::ShimoniRa;
 
-    pub mod *下二・ワ行* {
+    pub mod shimoni_wa {
         define_enum! {
-            pub enum #下二・ワ行# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniWa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・ワ行*::#下二・ワ行#;
+    pub use self::shimoni_wa::ShimoniWa;
 
-    pub mod *下二・得* {
+    pub mod shimoni_u {
         define_enum! {
-            pub enum #下二・得# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum ShimoniU features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*下二・得*::#下二・得#;
+    pub use self::shimoni_u::ShimoniU;
 
-    pub mod *一段・クレル* {
+    pub mod ichidan_kureru {
         define_enum! {
-            pub enum #一段・クレル# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然特殊" => #未然特殊#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "命令ｙｏ" => #命令ｙｏ#,
-                "命令ｒｏ" => #命令ｒｏ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum IchidanKureru features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然特殊" => NegativeSpecial,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "命令ｙｏ" => ImperativeYo,
+                "命令ｒｏ" => ImperativeRo,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*一段・クレル*::#一段・クレル#;
+    pub use self::ichidan_kureru::IchidanKureru;
 
-    pub mod *一段・ル* {
+    pub mod ichidan_ru {
         define_enum! {
-            pub enum #一段・ル# features[5] {
-                "基本形" => #基本形#,
-                "仮定形" => #仮定形#,
-                "命令ｒｏ" => #命令ｒｏ#,
-                "仮定縮約１" => #仮定縮約１#,
+            pub enum IchidanRu features[5] {
+                "基本形" => Basic,
+                "仮定形" => Conditional,
+                "命令ｒｏ" => ImperativeRo,
+                "仮定縮約１" => ConditionalContraction1,
             }
         }
     }
-    pub use self::*一段・ル*::#一段・ル#;
+    pub use self::ichidan_ru::IchidanRu;
 
-    pub mod *形容詞・アウオ段* {
+    pub mod adjective_auo {
         define_enum! {
-            pub enum #形容詞・アウオ段# features[5] {
-                "基本形" => #基本形#,
-                "文語基本形" => #文語基本形#,
-                "未然ヌ接続" => #未然ヌ接続#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用タ接続" => #連用タ接続#,
-                "連用テ接続" => #連用テ接続#,
-                "連用テ接続" => #連用テ接続#,
-                "連用ゴザイ接続" => #連用ゴザイ接続#,
-                "連用ゴザイ接続" => #連用ゴザイ接続#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "仮定縮約２" => #仮定縮約２#,
-                "ガル接続" => #ガル接続#,
+            pub enum AdjectiveAUO features[5] {
+                "基本形" => Basic,
+                "文語基本形" => OldBasic,
+                "未然ヌ接続" => NegativeNu,
+                "未然ウ接続" => NegativeU,
+                "連用タ接続" => ContinuousTa,
+                "連用テ接続" => ContinuousTe,
+                "連用ゴザイ接続" => ContinuousGozai,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
+                "仮定縮約２" => ConditionalContraction2,
+                "ガル接続" => Garu,
             }
         }
     }
-    pub use self::*形容詞・アウオ段*::#形容詞・アウオ段#;
+    pub use self::adjective_auo::AdjectiveAUO;
 
-    pub mod *形容詞・イ段* {
+    pub mod adjective_i {
         define_enum! {
-            pub enum #形容詞・イ段# features[5] {
-                "基本形" => #基本形#,
-                "文語基本形" => #文語基本形#,
-                "未然ヌ接続" => #未然ヌ接続#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用タ接続" => #連用タ接続#,
-                "連用テ接続" => #連用テ接続#,
-                "連用テ接続" => #連用テ接続#,
-                "連用ゴザイ接続" => #連用ゴザイ接続#,
-                "連用ゴザイ接続" => #連用ゴザイ接続#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "仮定縮約２" => #仮定縮約２#,
-                "ガル接続" => #ガル接続#,
+            pub enum AdjectiveI features[5] {
+                "基本形" => Basic,
+                "文語基本形" => OldBasic,
+                "未然ヌ接続" => NegativeNu,
+                "未然ウ接続" => NegativeU,
+                "連用タ接続" => ContinuousTa,
+                "連用テ接続" => ContinuousTe,
+                "連用ゴザイ接続" => ContinuousGozai,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
+                "仮定縮約２" => ConditionalContraction2,
+                "ガル接続" => Garu,
             }
         }
     }
-    pub use self::*形容詞・イ段*::#形容詞・イ段#;
+    pub use self::adjective_i::AdjectiveI;
 
-    pub mod *特殊・ナイ* {
+    pub mod special_nai {
         define_enum! {
-            pub enum #特殊・ナイ# features[5] {
-                "基本形" => #基本形#,
-                "音便基本形" => #音便基本形#,
-                "音便基本形" => #音便基本形#,
-                "文語基本形" => #文語基本形#,
-                "未然ヌ接続" => #未然ヌ接続#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用タ接続" => #連用タ接続#,
-                "連用タ接続" => #連用タ接続#,
-                "連用テ接続" => #連用テ接続#,
-                "連用テ接続" => #連用テ接続#,
-                "連用デ接続" => #連用デ接続#,
-                "連用ゴザイ接続" => #連用ゴザイ接続#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "仮定縮約１" => #仮定縮約１#,
-                "仮定縮約２" => #仮定縮約２#,
-                "ガル接続" => #ガル接続#,
+            pub enum SpecialNai features[5] {
+                "基本形" => Basic,
+                "音便基本形" => OnbinBasic,
+                "文語基本形" => OldBasic,
+                "未然ヌ接続" => NegativeNu,
+                "未然ウ接続" => NegativeU,
+                "連用タ接続" => ContinuousTa,
+                "連用テ接続" => ContinuousTe,
+                "連用デ接続" => ContinuousDe,
+                "連用ゴザイ接続" => ContinuousGozai,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "仮定縮約１" => ConditionalContraction1,
+                "仮定縮約２" => ConditionalContraction2,
+                "ガル接続" => Garu,
             }
         }
     }
-    pub use self::*特殊・ナイ*::#特殊・ナイ#;
+    pub use self::special_nai::SpecialNai;
 
-    pub mod *特殊・タイ* {
+    pub mod special_tai {
         define_enum! {
-            pub enum #特殊・タイ# features[5] {
-                "基本形" => #基本形#,
-                "音便基本形" => #音便基本形#,
-                "音便基本形" => #音便基本形#,
-                "文語基本形" => #文語基本形#,
-                "未然ヌ接続" => #未然ヌ接続#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用タ接続" => #連用タ接続#,
-                "連用タ接続" => #連用タ接続#,
-                "連用テ接続" => #連用テ接続#,
-                "連用テ接続" => #連用テ接続#,
-                "連用ゴザイ接続" => #連用ゴザイ接続#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "仮定縮約１" => #仮定縮約１#,
-                "仮定縮約２" => #仮定縮約２#,
-                "ガル接続" => #ガル接続#,
+            pub enum SpecialTai features[5] {
+                "基本形" => Basic,
+                "音便基本形" => OnbinBasic,
+                "文語基本形" => OldBasic,
+                "未然ヌ接続" => NegativeNu,
+                "未然ウ接続" => NegativeU,
+                "連用タ接続" => ContinuousTa,
+                "連用テ接続" => ContinuousTe,
+                "連用ゴザイ接続" => ContinuousGozai,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "仮定縮約１" => ConditionalContraction1,
+                "仮定縮約２" => ConditionalContraction2,
+                "ガル接続" => Garu,
             }
         }
     }
-    pub use self::*特殊・タイ*::#特殊・タイ#;
+    pub use self::special_tai::SpecialTai;
 
-    pub mod *特殊・タ* {
+    pub mod special_ta {
         define_enum! {
-            pub enum #特殊・タ# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "仮定形" => #仮定形#,
+            pub enum SpecialTa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "仮定形" => Conditional,
             }
         }
     }
-    pub use self::*特殊・タ*::#特殊・タ#;
+    pub use self::special_ta::SpecialTa;
 
-    pub mod *特殊・ダ* {
+    pub mod special_da {
         define_enum! {
-            pub enum #特殊・ダ# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "連用タ接続" => #連用タ接続#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum SpecialDa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "連用タ接続" => ContinuousTa,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*特殊・ダ*::#特殊・ダ#;
+    pub use self::special_da::SpecialDa;
 
-    pub mod *特殊・デス* {
+    pub mod special_desu {
         define_enum! {
-            pub enum #特殊・デス# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
+            pub enum SpecialDesu features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
             }
         }
     }
-    pub use self::*特殊・デス*::#特殊・デス#;
+    pub use self::special_desu::SpecialDesu;
 
-    pub mod *特殊・ジャ* {
+    pub mod special_ja {
         define_enum! {
-            pub enum #特殊・ジャ# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
+            pub enum SpecialJa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
             }
         }
     }
-    pub use self::*特殊・ジャ*::#特殊・ジャ#;
+    pub use self::special_ja::SpecialJa;
 
-    pub mod *特殊・マス* {
+    pub mod specical_masu {
         define_enum! {
-            pub enum #特殊・マス# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "未然ウ接続" => #未然ウ接続#,
-                "連用形" => #連用形#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "命令ｉ" => #命令ｉ#,
+            pub enum SpecialMasu features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "未然ウ接続" => NegativeU,
+                "連用形" => Continuous,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "命令ｉ" => ImperativeI,
             }
         }
     }
-    pub use self::*特殊・マス*::#特殊・マス#;
+    pub use self::specical_masu::SpecialMasu;
 
-    pub mod *特殊・ヌ* {
+    pub mod special_nu {
         define_enum! {
-            pub enum #特殊・ヌ# features[5] {
-                "基本形" => #基本形#,
-                "文語基本形" => #文語基本形#,
-                "連用形" => #連用形#,
-                "連用ニ接続" => #連用ニ接続#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "仮定形" => #仮定形#,
-                "仮定形" => #仮定形#,
+            pub enum SpecialNu features[5] {
+                "基本形" => Basic,
+                "文語基本形" => OldBasic,
+                "連用形" => Continuous,
+                "連用ニ接続" => ContinuousNi,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
             }
         }
     }
-    pub use self::*特殊・ヌ*::#特殊・ヌ#;
+    pub use self::special_nu::SpecialNu;
 
-    pub mod *文語・ベシ* {
+    pub mod old_beshi {
         define_enum! {
-            pub enum #文語・ベシ# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
+            pub enum OldBeshi features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
             }
         }
     }
-    pub use self::*文語・ベシ*::#文語・ベシ#;
+    pub use self::old_beshi::OldBeshi;
 
-    pub mod *文語・ゴトシ* {
+    pub mod old_gotoshi {
         define_enum! {
-            pub enum #文語・ゴトシ# features[5] {
-                "基本形" => #基本形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
+            pub enum OldGotoshi features[5] {
+                "基本形" => Basic,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
             }
         }
     }
-    pub use self::*文語・ゴトシ*::#文語・ゴトシ#;
+    pub use self::old_gotoshi::OldGotoshi;
 
-    pub mod *文語・ナリ* {
+    pub mod old_nari {
         define_enum! {
-            pub enum #文語・ナリ# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum OldNari features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*文語・ナリ*::#文語・ナリ#;
+    pub use self::old_nari::OldNari;
 
-    pub mod *文語・マジ* {
+    pub mod old_maji {
         define_enum! {
-            pub enum #文語・マジ# features[5] {
-                "基本形" => #基本形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
+            pub enum OldMaji features[5] {
+                "基本形" => Basic,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
             }
         }
     }
-    pub use self::*文語・マジ*::#文語・マジ#;
+    pub use self::old_maji::OldMaji;
 
-    pub mod *文語・シム* {
+    pub mod old_shimu {
         define_enum! {
-            pub enum #文語・シム# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum OldShimu features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*文語・シム*::#文語・シム#;
+    pub use self::old_shimu::OldShimu;
 
-    pub mod *文語・キ* {
+    pub mod old_ki {
         define_enum! {
-            pub enum #文語・キ# features[5] {
-                "基本形" => #基本形#,
-                "体言接続" => #体言接続#,
-                "命令ｅ" => #命令ｅ#,
+            pub enum OldKi features[5] {
+                "基本形" => Basic,
+                "体言接続" => AttributiveConjunction,
+                "命令ｅ" => ImperativeE,
             }
         }
     }
-    pub use self::*文語・キ*::#文語・キ#;
+    pub use self::old_ki::OldKi;
 
-    pub mod *文語・ケリ* {
+    pub mod old_keri {
         define_enum! {
-            pub enum #文語・ケリ# features[5] {
-                "基本形" => #基本形#,
-                "体言接続" => #体言接続#,
+            pub enum OldKeri features[5] {
+                "基本形" => Basic,
+                "体言接続" => AttributiveConjunction,
             }
         }
     }
-    pub use self::*文語・ケリ*::#文語・ケリ#;
+    pub use self::old_keri::OldKeri;
 
-    pub mod *文語・リ* {
+    pub mod old_ri {
         define_enum! {
-            pub enum #文語・リ# features[5] {
-                "基本形" => #基本形#,
-                "体言接続" => #体言接続#,
+            pub enum OldRi features[5] {
+                "基本形" => Basic,
+                "体言接続" => AttributiveConjunction,
             }
         }
     }
-    pub use self::*文語・リ*::#文語・リ#;
+    pub use self::old_ri::OldRi;
 
-    pub mod *文語・ル* {
+    pub mod old_ru {
         define_enum! {
-            pub enum #文語・ル# features[5] {
-                "基本形" => #基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
-                "体言接続" => #体言接続#,
-                "仮定形" => #仮定形#,
-                "命令ｅ" => #命令ｅ#,
-                "命令ｙｏ" => #命令ｙｏ#,
+            pub enum OldRu features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
+                "体言接続" => AttributiveConjunction,
+                "仮定形" => Conditional,
+                "命令ｅ" => ImperativeE,
+                "命令ｙｏ" => ImperativeYo,
             }
         }
     }
-    pub use self::*文語・ル*::#文語・ル#;
+    pub use self::old_ru::OldRu;
 
-    pub mod *不変化型* {
+    pub mod no_conjugation {
         define_enum! {
-            pub enum #不変化型# features[5] {
-                "基本形" => #基本形#,
+            pub enum NoConjugation features[5] {
+                "基本形" => Basic,
             }
         }
     }
-    pub use self::*不変化型*::#不変化型#;
+    pub use self::no_conjugation::NoConjugation;
 
-    pub mod *形容詞・イイ* {
+    pub mod adjective_ii {
         define_enum! {
-            pub enum #形容詞・イイ# features[5] {
-                "基本形" => #基本形#,
-                "基本形-促音便" => #基本形-促音便#,
-                "基本形-促音便" => #基本形-促音便#,
+            pub enum AdjectiveII features[5] {
+                "基本形" => Basic,
+                "基本形-促音便" => BasicSokuonbin,
             }
         }
     }
-    pub use self::*形容詞・イイ*::#形容詞・イイ#;
+    pub use self::adjective_ii::AdjectiveII;
 
-    pub mod *特殊・ドス* {
+    pub mod special_dosu {
         define_enum! {
-            pub enum #特殊・ドス# features[5] {
-                "基本形" => #基本形#,
+            pub enum SpecialDosu features[5] {
+                "基本形" => Basic,
             }
         }
     }
-    pub use self::*特殊・ドス*::#特殊・ドス#;
+    pub use self::special_dosu::SpecialDosu;
 
-    pub mod *一段・得ル* {
+    pub mod ichidan_eru {
         define_enum! {
-            pub enum #一段・得ル# features[5] {
-                "基本形" => #基本形#,
-                "仮定形" => #仮定形#,
+            pub enum IchidanEru features[5] {
+                "基本形" => Basic,
+                "仮定形" => Conditional,
             }
         }
     }
-    pub use self::*一段・得ル*::#一段・得ル#;
+    pub use self::ichidan_eru::IchidanEru;
 
-    pub mod *特殊・ヤ* {
+    pub mod special_ya {
         define_enum! {
-            pub enum #特殊・ヤ# features[5] {
-                "(基本形" => #(基本形#,
-                "未然形" => #未然形#,
-                "連用形" => #連用形#,
+            pub enum SpecialYa features[5] {
+                "基本形" => Basic,
+                "未然形" => Negative,
+                "連用形" => Continuous,
             }
         }
     }
-    pub use self::*特殊・ヤ*::#特殊・ヤ#;
+    pub use self::special_ya::SpecialYa;
 
     define_enum! {
-        pub enum #活用# features[4] {
-            "カ変・クル" => #カ変・クル#(..),
-            "カ変・来ル" => #カ変・来ル#(..),
-            "サ変・スル" => #サ変・スル#(..),
-            "サ変・－スル" => #サ変・－スル#(..),
-            "サ変・－ズル" => #サ変・－ズル#(..),
-            "一段" => #一段#(..),
-            "一段・病メル" => #一段・病メル#(..),
-            "五段・カ行イ音便" => #五段・カ行イ音便#(..),
-            "五段・カ行促音便" => #五段・カ行促音便#(..),
-            "五段・カ行促音便ユク" => #五段・カ行促音便ユク#(..),
-            "五段・ガ行" => #五段・ガ行#(..),
-            "五段・サ行" => #五段・サ行#(..),
-            "五段・タ行" => #五段・タ行#(..),
-            "五段・ナ行" => #五段・ナ行#(..),
-            "五段・バ行" => #五段・バ行#(..),
-            "五段・マ行" => #五段・マ行#(..),
-            "五段・ラ行" => #五段・ラ行#(..),
-            "五段・ラ行アル" => #五段・ラ行アル#(..),
-            "五段・ラ行特殊" => #五段・ラ行特殊#(..),
-            "五段・ワ行ウ音便" => #五段・ワ行ウ音便#(..),
-            "五段・ワ行促音便" => #五段・ワ行促音便#(..),
-            "四段・カ行" => #四段・カ行#(..),
-            "四段・ガ行" => #四段・ガ行#(..),
-            "四段・サ行" => #四段・サ行#(..),
-            "四段・タ行" => #四段・タ行#(..),
-            "四段・バ行" => #四段・バ行#(..),
-            "四段・マ行" => #四段・マ行#(..),
-            "四段・ラ行" => #四段・ラ行#(..),
-            "四段・ハ行" => #四段・ハ行#(..),
-            "ラ変" => #ラ変#(..),
-            "上二・ダ行" => #上二・ダ行#(..),
-            "上二・ハ行" => #上二・ハ行#(..),
-            "下二・ア行" => #下二・ア行#(..),
-            "下二・カ行" => #下二・カ行#(..),
-            "下二・ガ行" => #下二・ガ行#(..),
-            "下二・サ行" => #下二・サ行#(..),
-            "下二・ザ行" => #下二・ザ行#(..),
-            "下二・タ行" => #下二・タ行#(..),
-            "下二・ダ行" => #下二・ダ行#(..),
-            "下二・ナ行" => #下二・ナ行#(..),
-            "下二・ハ行" => #下二・ハ行#(..),
-            "下二・バ行" => #下二・バ行#(..),
-            "下二・マ行" => #下二・マ行#(..),
-            "下二・ヤ行" => #下二・ヤ行#(..),
-            "下二・ラ行" => #下二・ラ行#(..),
-            "下二・ワ行" => #下二・ワ行#(..),
-            "下二・得" => #下二・得#(..),
-            "一段・クレル" => #一段・クレル#(..),
-            "一段・ル" => #一段・ル#(..),
-            "形容詞・アウオ段" => #形容詞・アウオ段#(..),
-            "形容詞・イ段" => #形容詞・イ段#(..),
-            "特殊・ナイ" => #特殊・ナイ#(..),
-            "特殊・タイ" => #特殊・タイ#(..),
-            "特殊・タ" => #特殊・タ#(..),
-            "特殊・ダ" => #特殊・ダ#(..),
-            "特殊・デス" => #特殊・デス#(..),
-            "特殊・ジャ" => #特殊・ジャ#(..),
-            "特殊・マス" => #特殊・マス#(..),
-            "特殊・ヌ" => #特殊・ヌ#(..),
-            "文語・ベシ" => #文語・ベシ#(..),
-            "文語・ゴトシ" => #文語・ゴトシ#(..),
-            "文語・ナリ" => #文語・ナリ#(..),
-            "文語・マジ" => #文語・マジ#(..),
-            "文語・シム" => #文語・シム#(..),
-            "文語・キ" => #文語・キ#(..),
-            "文語・ケリ" => #文語・ケリ#(..),
-            "文語・リ" => #文語・リ#(..),
-            "文語・ル" => #文語・ル#(..),
-            "不変化型" => #不変化型#(..),
-            "形容詞・イイ" => #形容詞・イイ#(..),
-            "特殊・ドス" => #特殊・ドス#(..),
-            "一段・得ル" => #一段・得ル#(..),
-            "特殊・ヤ" => #特殊・ヤ#(..),
+        pub enum Conjugation features[4] {
+            "*" => None,
+            "カ変・クル" => KahenKuru(..),
+            "カ変・来ル" => KahenKuruKanji(..),
+            "サ変・スル" => SahenSuru(..),
+            "サ変・－スル" => SahenSuruConnected(..),
+            "サ変・－ズル" => SahenZuruConnected(..),
+            "一段" => Ichidan(..),
+            "一段・病メル" => IchidanYameru(..),
+            "五段・カ行イ音便" => GodanKaIonbin(..),
+            "五段・カ行促音便" => GodanKaSokuonbin(..),
+            "五段・カ行促音便ユク" => GodanKaSokuonbinYuku(..),
+            "五段・ガ行" => GodanGa(..),
+            "五段・サ行" => GodanSa(..),
+            "五段・タ行" => GodanTa(..),
+            "五段・ナ行" => GodanNa(..),
+            "五段・バ行" => GodanBa(..),
+            "五段・マ行" => GodanMa(..),
+            "五段・ラ行" => GodanRa(..),
+            "五段・ラ行アル" => GodanRaAru(..),
+            "五段・ラ行特殊" => GodanRaSpecial(..),
+            "五段・ワ行ウ音便" => GodanWaUonbin(..),
+            "五段・ワ行促音便" => GodanWaSokuonbin(..),
+            "四段・カ行" => YodanKa(..),
+            "四段・ガ行" => YodanGa(..),
+            "四段・サ行" => YodanSa(..),
+            "四段・タ行" => YodanTa(..),
+            "四段・バ行" => YodanBa(..),
+            "四段・マ行" => YodanMa(..),
+            "四段・ラ行" => YodanRa(..),
+            "四段・ハ行" => YodanHa(..),
+            "ラ変" => Rahen(..),
+            "上二・ダ行" => KaminiDa(..),
+            "上二・ハ行" => KaminiHa(..),
+            "下二・ア行" => ShimoniA(..),
+            "下二・カ行" => ShimoniKa(..),
+            "下二・ガ行" => ShimoniGa(..),
+            "下二・サ行" => ShimoniSa(..),
+            "下二・ザ行" => ShimoniZa(..),
+            "下二・タ行" => ShimoniTa(..),
+            "下二・ダ行" => ShimoniDa(..),
+            "下二・ナ行" => ShimoniNa(..),
+            "下二・ハ行" => ShimoniHa(..),
+            "下二・バ行" => ShimoniBa(..),
+            "下二・マ行" => ShimoniMa(..),
+            "下二・ヤ行" => ShimoniYa(..),
+            "下二・ラ行" => ShimoniRa(..),
+            "下二・ワ行" => ShimoniWa(..),
+            "下二・得" => ShimoniU(..),
+            "一段・クレル" => IchidanKureru(..),
+            "一段・ル" => IchidanRu(..),
+            "形容詞・アウオ段" => AdjectiveAUO(..),
+            "形容詞・イ段" => AdjectiveI(..),
+            "特殊・ナイ" => SpecialNai(..),
+            "特殊・タイ" => SpecialTai(..),
+            "特殊・タ" => SpecialTa(..),
+            "特殊・ダ" => SpecialDa(..),
+            "特殊・デス" => SpecialDesu(..),
+            "特殊・ジャ" => SpecialJa(..),
+            "特殊・マス" => SpecialMasu(..),
+            "特殊・ヌ" => SpecialNu(..),
+            "文語・ベシ" => OldBeshi(..),
+            "文語・ゴトシ" => OldGotoshi(..),
+            "文語・ナリ" => OldNari(..),
+            "文語・マジ" => OldMaji(..),
+            "文語・シム" => OldShimu(..),
+            "文語・キ" => OldKi(..),
+            "文語・ケリ" => OldKeri(..),
+            "文語・リ" => OldRi(..),
+            "文語・ル" => OldRu(..),
+            "不変化型" => NoConjugation(..),
+            "形容詞・イイ" => AdjectiveII(..),
+            "特殊・ドス" => SpecialDosu(..),
+            "一段・得ル" => IchidanEru(..),
+            "特殊・ヤ" => SpecialYa(..),
         }
     }
 }
-pub use self::*活用*::#活用#;
-
+pub use self::conjugation::Conjugation;

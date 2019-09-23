@@ -1,224 +1,223 @@
-pub mod *品詞* {
-    pub mod *名詞* {
-        pub mod *固有名詞* {
-            pub mod *人名* {
+pub mod wordclass {
+    pub mod noun {
+        pub mod proper {
+            pub mod person {
                 define_enum! {
-                    pub enum #人名# features[3] {
-                        "一般" => #一般#,
-                        "姓" => #姓#,
-                        "名" => #名#,
+                    pub enum Person features[3] {
+                        "一般" => General,
+                        "姓" => Last,
+                        "名" => First,
                     }
                 }
             }
-            pub use self::*人名*::#人名#;
+            pub use self::person::Person;
 
-            pub mod *地域* {
+            pub mod region {
                 define_enum! {
-                    pub enum #地域# features[3] {
-                        "一般" => #一般#,
-                        "国" => #国#,
+                    pub enum Region features[3] {
+                        "一般" => General,
+                        "国" => Country,
                     }
                 }
             }
-            pub use self::*地域*::#地域#;
+            pub use self::region::Region;
 
             define_enum! {
-                pub enum #固有名詞# features[2] {
-                    "一般" => #一般#,
-                    "人名" => #人名#(..),
-                    "組織" => #組織#,
-                    "地域" => #地域#(..),
+                pub enum Proper features[2] {
+                    "一般" => General,
+                    "人名" => Person(..),
+                    "組織" => Organization,
+                    "地域" => Region(..),
                 }
             }
         }
-        pub use self::*固有名詞*::#固有名詞#;
+        pub use self::proper::Proper;
 
-        pub mod *代名詞* {
+        pub mod pronoun {
             define_enum! {
-                pub enum #代名詞# features[2] {
-                    "一般" => #一般#,
-                    "縮約" => #縮約#,
+                pub enum Pronoun features[2] {
+                    "一般" => General,
+                    "縮約" => Contraction,
                 }
             }
         }
-        pub use self::*代名詞*::#代名詞#;
+        pub use self::pronoun::Pronoun;
 
-        pub mod *非自立* {
+        pub mod dependent {
             define_enum! {
-                pub enum #非自立# features[2] {
-                    "一般" => #一般#,
-                    "副詞可能" => #副詞可能#,
-                    "助動詞語幹" => #助動詞語幹#,
-                    "形容動詞語幹" => #形容動詞語幹#,
+                pub enum Dependent features[2] {
+                    "一般" => General,
+                    "副詞可能" => CanBeAdverb,
+                    "助動詞語幹" => AuxiliaryVerbStem,
+                    "形容動詞語幹" => AdjectiveVerbStem,
                 }
             }
         }
-        pub use self::*非自立*::#非自立#;
+        pub use self::dependent::Dependent;
 
-        pub mod *特殊* {
+        pub mod special {
             define_enum! {
-                pub enum #特殊# features[2] {
-                    "助動詞語幹" => #助動詞語幹#,
+                pub enum Special features[2] {
+                    "助動詞語幹" => AuxiliaryVerbStem,
                 }
             }
         }
-        pub use self::*特殊*::#特殊#;
+        pub use self::special::Special;
 
-        pub mod *接尾* {
+        pub mod suffix {
             define_enum! {
-                pub enum #接尾# features[2] {
-                    "一般" => #一般#,
-                    "人名" => #人名#,
-                    "地域" => #地域#,
-                    "サ変接続" => #サ変接続#,
-                    "助動詞語幹" => #助動詞語幹#,
-                    "形容動詞語幹" => #形容動詞語幹#,
-                    "副詞可能" => #副詞可能#,
-                    "助数詞" => #助数詞#,
-                    "特殊" => #特殊#,
+                pub enum Suffix features[2] {
+                    "一般" => General,
+                    "人名" => Person,
+                    "地域" => Region,
+                    "サ変接続" => SahenConjunction,
+                    "助動詞語幹" => AuxiliaryVerbStem,
+                    "形容動詞語幹" => AdjectiveVerbStem,
+                    "副詞可能" => CanBeAdverb,
+                    "助数詞" => Quantifier,
+                    "特殊" => Special,
                 }
             }
         }
-        pub use self::*接尾*::#接尾#;
+        pub use self::suffix::Suffix;
 
         define_enum! {
-            pub enum #名詞# features[1] {
-                "一般" => #一般#,
-                "固有名詞" => #固有名詞#(..),
-                "代名詞" => #代名詞#(..),
-                "副詞可能" => #副詞可能#,
-                "サ変接続" => #サ変接続#,
-                "形容動詞語幹" => #形容動詞語幹#,
-                "数" => #数#,
-                "非自立" => #非自立#(..),
-                "特殊" => #特殊#(..),
-                "接尾" => #接尾#(..),
-                "接続詞的" => #接続詞的#,
-                "動詞非自立的" => #動詞非自立的#,
-                "引用文字列" => #引用文字列#,
-                "ナイ形容詞語幹" => #ナイ形容詞語幹#,
+            pub enum Noun features[1] {
+                "一般" => General,
+                "固有名詞" => Proper(..),
+                "代名詞" => Pronoun(..),
+                "副詞可能" => CanBeAdverb,
+                "サ変接続" => SahenConjunction,
+                "形容動詞語幹" => AdjectiveVerbStem,
+                "数" => Number,
+                "非自立" => Dependent(..),
+                "特殊" => Special(..),
+                "接尾" => Suffix(..),
+                "接続詞的" => LineConjunction,
+                "動詞非自立的" => VerbDependent,
+                "引用文字列" => Quote,
+                "ナイ形容詞語幹" => NaiAdjectiveStem,
             }
         }
     }
-    pub use self::*名詞*::#名詞#;
+    pub use self::noun::Noun;
 
-    pub mod *接頭詞* {
+    pub mod prefix {
         define_enum! {
-            pub enum #接頭詞# features[1] {
-                "名詞接続" => #名詞接続#,
-                "動詞接続" => #動詞接続#,
-                "形容詞接続" => #形容詞接続#,
-                "数接続" => #数接続#,
+            pub enum Prefix features[1] {
+                "名詞接続" => NounConjunction,
+                "動詞接続" => VerbConjunction,
+                "形容詞接続" => AdjectiveConjunction,
+                "数接続" => NumberConjunction,
             }
         }
     }
-    pub use self::*接頭詞*::#接頭詞#;
+    pub use self::prefix::Prefix;
 
-    pub mod *動詞* {
+    pub mod verb {
         define_enum! {
-            pub enum #動詞# features[1] {
-                "自立" => #自立#,
-                "非自立" => #非自立#,
-                "接尾" => #接尾#,
+            pub enum Verb features[1] {
+                "自立" => Independent,
+                "非自立" => Dependent,
+                "接尾" => Suffix,
             }
         }
     }
-    pub use self::*動詞*::#動詞#;
+    pub use self::verb::Verb;
 
-    pub mod *形容詞* {
+    pub mod adjective {
         define_enum! {
-            pub enum #形容詞# features[1] {
-                "自立" => #自立#,
-                "非自立" => #非自立#,
-                "接尾" => #接尾#,
+            pub enum Adjective features[1] {
+                "自立" => Independent,
+                "非自立" => Dependent,
+                "接尾" => Suffix,
             }
         }
     }
-    pub use self::*形容詞*::#形容詞#;
+    pub use self::adjective::Adjective;
 
-    pub mod *副詞* {
+    pub mod adverb {
         define_enum! {
-            pub enum #副詞# features[1] {
-                "一般" => #一般#,
-                "助詞類接続" => #助詞類接続#,
+            pub enum Adverb features[1] {
+                "一般" => General,
+                "助詞類接続" => AuxiliaryVerbConjunction,
             }
         }
     }
-    pub use self::*副詞*::#副詞#;
+    pub use self::adverb::Adverb;
 
-    pub mod *助詞* {
-        pub mod *格助詞* {
+    pub mod postpositional {
+        pub mod nominative {
             define_enum! {
-                pub enum #格助詞# features[2] {
-                    "一般" => #一般#,
-                    "引用" => #引用#,
-                    "連語" => #連語#,
+                pub enum Nominative features[2] {
+                    "一般" => General,
+                    "引用" => Quote,
+                    "連語" => Copula,
                 }
             }
         }
-        pub use self::*格助詞*::#格助詞#;
+        pub use self::nominative::Nominative;
 
         define_enum! {
-            pub enum #助詞# features[1] {
-                "格助詞" => #格助詞#(..),
-                "接続助詞" => #接続助詞#,
-                "係助詞" => #係助詞#,
-                "副助詞" => #副助詞#,
-                "間投助詞" => #間投助詞#,
-                "並立助詞" => #並立助詞#,
-                "終助詞" => #終助詞#,
-                "副助詞／並立助詞／終助詞" => #副助詞／並立助詞／終助詞#,
-                "連体化" => #連体化#,
-                "副詞化" => #副詞化#,
-                "特殊" => #特殊#,
+            pub enum Postpositional features[1] {
+                "格助詞" => Nominative(..),
+                "接続助詞" => Conjunction,
+                "係助詞" => Dependency,
+                "副助詞" => Supplementary,
+                "間投助詞" => Interjective,
+                "並立助詞" => Parallel,
+                "終助詞" => End,
+                "副助詞／並立助詞／終助詞" => SupplementaryParallelEnd,
+                "連体化" => MakeAttributive,
+                "副詞化" => MakeAdverb,
+                "特殊" => Special,
             }
         }
     }
-    pub use self::*助詞*::#助詞#;
+    pub use self::postpositional::Postpositional;
 
-    pub mod *記号* {
+    pub mod symbol {
         define_enum! {
-            pub enum #記号# features[1] {
-                "一般" => #一般#,
-                "句点" => #句点#,
-                "読点" => #読点#,
-                "空白" => #空白#,
-                "アルファベット" => #アルファベット#,
-                "括弧開" => #括弧開#,
-                "括弧閉" => #括弧閉#,
+            pub enum Symbol features[1] {
+                "一般" => General,
+                "句点" => Period,
+                "読点" => Comma,
+                "空白" => Space,
+                "アルファベット" => Alphabet,
+                "括弧開" => OpenParen,
+                "括弧閉" => CloseParen,
             }
         }
     }
-    pub use self::*記号*::#記号#;
+    pub use self::symbol::Symbol;
 
-    pub mod *その他* {
+    pub mod other {
         define_enum! {
-            pub enum #その他# features[1] {
-                "間投" => #間投#,
+            pub enum Other features[1] {
+                "間投" => Interjective,
             }
         }
     }
-    pub use self::*その他*::#その他#;
+    pub use self::other::Other;
 
     define_enum! {
-        pub enum #品詞# features[0] {
-            "名詞" => #名詞#(..),
-            "接頭詞" => #接頭詞#(..),
-            "動詞" => #動詞#(..),
-            "形容詞" => #形容詞#(..),
-            "副詞" => #副詞#(..),
-            "連体詞" => #連体詞#,
-            "接続詞" => #接続詞#,
-            "助詞" => #助詞#(..),
-            "助動詞" => #助動詞#,
-            "感動詞" => #感動詞#,
-            "記号" => #記号#(..),
-            "その他" => #その他#(..),
-            "フィラー" => #フィラー#,
-            "非言語音" => #非言語音#,
-            "語断片" => #語断片#,
+        pub enum WordClass features[0] {
+            "名詞" => Noun(..),
+            "接頭詞" => Prefix(..),
+            "動詞" => Verb(..),
+            "形容詞" => Adjective(..),
+            "副詞" => Adverb(..),
+            "連体詞" => Attributive,
+            "接続詞" => Conjunction,
+            "助詞" => Postpositional(..),
+            "助動詞" => AuxiliaryVerb,
+            "感動詞" => Interjection,
+            "記号" => Symbol(..),
+            "その他" => Other(..),
+            "フィラー" => Filler,
+            "非言語音" => NonLanguage,
+            "語断片" => WordFragment,
         }
     }
 }
-pub use self::*品詞*::#品詞#;
-
+pub use self::wordclass::WordClass;
