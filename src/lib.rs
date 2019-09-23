@@ -1,12 +1,5 @@
 use igo::Morpheme as IgoMorpheme;
 
-pub mod conjugation;
-pub mod word_class;
-
-pub use conjugation::Conjugation;
-pub use word_class::WordClass;
-
-#[macro_export]
 macro_rules! define_enum {
     (pub enum $enum:ident $argfeatures:ident[$at:literal] { $($tts:tt)* }) => {
         define_enum! {
@@ -143,6 +136,9 @@ macro_rules! define_enum {
         }
     };
 }
+
+include!("conjugation.rs");
+include!("word_class.rs");
 
 #[derive(Debug)]
 pub struct Morpheme<'s, 'f> {
