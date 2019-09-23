@@ -145,6 +145,7 @@ macro_rules! define_enum {
     };
 }
 
+#[derive(Debug)]
 pub struct Morpheme<'s, 'f> {
     pub surface: &'s str,
     pub word_class: WordClass,
@@ -180,8 +181,22 @@ impl<'s, 'f> From<IgoMorpheme<'f, 's>> for Morpheme<'s, 'f> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+    use igo::{Tagger, ZipDir};
+    use std::io::Cursor;
+
     #[test]
     fn it_works() {
-        assert_eq!(2 + 2, 4);
+        let dic = Cursor::new(include_bytes!("ipadic.zip").to_vec());
+        let mut dic = ZipDir::new(dic).unwrap();
+        let tagger = Tagger::load_from_dir(&mut dic).unwrap();
+
+        let morphemes: Vec<_> = tagger
+            .parse("すもももももももものうち")
+            .into_iter()
+            .map(|m| Morpheme::from(m))
+            .collect();
+
+        println!("{:?}", morphemes);
     }
 }
