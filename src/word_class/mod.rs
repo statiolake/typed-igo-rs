@@ -19,7 +19,7 @@ pub use verb::Verb;
 use crate::define_enum;
 
 define_enum! {
-    pub enum WordClass values[1] {
+    pub enum WordClass features[0] {
         "名詞" => Noun(..),
         "接頭詞" => Prefix(..),
         "動詞" => Verb(..),

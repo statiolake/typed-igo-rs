@@ -8,4 +8,3 @@ edition = "2018"
 
 [dependencies]
 igo-rs = "0.3.0"
-failure = "0.1.5"

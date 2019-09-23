@@ -2,6 +2,8 @@ use crate::define_enum;
 
 define_enum! {
     pub enum Conjugation features[4] {
+        "*" => None,
+
         // 形容詞の変化形
         "形容詞・アウオ段" => AdjectiveAUO(..),
         "形容詞・イイ" => AdjectiveII(..),

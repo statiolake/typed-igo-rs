@@ -1,4 +1,3 @@
-use failure::Fail;
 use igo::Morpheme as IgoMorpheme;
 
 pub mod conjugation;
@@ -6,10 +5,6 @@ pub mod word_class;
 
 pub use conjugation::Conjugation;
 pub use word_class::WordClass;
-
-#[derive(Debug, Fail)]
-#[fail(display = "Unknown value: {}", 0)]
-pub struct UnknownValue(String);
 
 #[macro_export]
 macro_rules! define_enum {
@@ -85,7 +80,7 @@ macro_rules! define_enum {
             @enum $enum
             @at $at
             @argfeatures $argfeatures
-            @fields [$($fields)* (@value ($value) @ident ($($ident)*) @child (($($ident)*)) @parsechild (($($ident)*::parse($argfeatures).expect("failed to parse child"))))]
+            @fields [$($fields)* (@value ($value) @ident ($($ident)*) @child (($($ident)*)) @parsechild (($($ident)*::parse($argfeatures))))]
             @value ()
             @rest $($rest)*
         }
@@ -113,12 +108,15 @@ macro_rules! define_enum {
      @fields [$((@value ($value:literal) @ident ($($ident:tt)*) @child ($($child:tt)*) @parsechild ($($parsechild:tt)*)))*]
      @value ()
      @rest) => {
-        #[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
+        #[derive(Clone, Debug, PartialEq, Eq, Hash)]
         pub enum $enum {
             $(
                 #[doc=$value]
                 $($ident)* $($child)*,
             )*
+
+            #[doc="定義されていない分類"]
+            Undefined(String),
         }
 
         impl ::std::fmt::Display for $enum {
@@ -128,17 +126,18 @@ macro_rules! define_enum {
                     $(
                         $enum::$($ident)* $($child)* => ::std::fmt::Write::write_str(b, $value),
                     )*
+                    $enum::Undefined(undef) => ::std::fmt::Write::write_str(b, undef),
                 }
             }
         }
 
         impl $enum {
-            pub fn parse<'a>($argfeatures: &'a [&'a str]) -> ::std::result::Result<$enum, $crate::UnknownValue> {
+            pub fn parse<'a>($argfeatures: &'a [&'a str]) -> $enum {
                 match $argfeatures[$at] {
                     $(
-                        $value => Ok($enum::$($ident)* $($parsechild)*),
+                        $value => $enum::$($ident)* $($parsechild)*,
                     )*
-                    other => Err($crate::UnknownValue(other.to_string())),
+                    other => $enum::Undefined(other.to_string()),
                 }
             }
         }
@@ -161,11 +160,11 @@ impl<'s, 'f> From<IgoMorpheme<'f, 's>> for Morpheme<'s, 'f> {
         let surface = from.surface;
         let start = from.start;
         let features: Vec<_> = from.feature.split(',').collect();
-        let word_class = WordClass::parse(&*features).expect("failed to parse WordClass");
-        let conjugation = Conjugation::parse(&*features).expect("failed to parse Conjugation");
+        let word_class = WordClass::parse(&*features);
+        let conjugation = Conjugation::parse(&*features);
         let original_form = features[6];
-        let reading = features[7];
-        let pronunciation = features[8];
+        let reading = features.get(7).unwrap_or(&"");
+        let pronunciation = features.get(8).unwrap_or(&"");
 
         Morpheme {
             surface,
@@ -187,16 +186,23 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let dic = Cursor::new(include_bytes!("ipadic.zip").to_vec());
+        let dic = include_bytes!("ipadic.zip");
+        let dic = Cursor::new(dic as &[u8]);
         let mut dic = ZipDir::new(dic).unwrap();
         let tagger = Tagger::load_from_dir(&mut dic).unwrap();
 
         let morphemes: Vec<_> = tagger
             .parse("すもももももももものうち")
             .into_iter()
-            .map(|m| Morpheme::from(m))
+            .map(Morpheme::from)
             .collect();
+        println!("{:#?}", morphemes);
 
-        println!("{:?}", morphemes);
+        let morphemes: Vec<_> = tagger
+            .parse("日本の読者の皆様、こんにちは。日頃からウィキペディアをご利用いただきありがとうございます。 少し申し上げにくいのですが、この月曜日に、私たちには皆様のご支援が必要です。今年既にご寄付をくださった方には心から感謝しています。私たちは営業マンではありません。 平均 1,500円の寄付金が頼りですが、寄付してくださるのは全体の1%未満です。あなたが今日口にするコーヒー一杯分に相当する300円のご支援で、ウィキペディアは発展し続けられます。 どうぞよろしくお願いいたします。")
+            .into_iter()
+            .map(Morpheme::from)
+            .collect();
+        println!("{:#?}", morphemes);
     }
 }
