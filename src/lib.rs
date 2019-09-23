@@ -113,6 +113,7 @@ macro_rules! define_enum {
      @fields [$((@value ($value:literal) @ident ($($ident:tt)*) @child ($($child:tt)*) @parsechild ($($parsechild:tt)*)))*]
      @value ()
      @rest) => {
+        #[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
         pub enum $enum {
             $(
                 #[doc=$value]
