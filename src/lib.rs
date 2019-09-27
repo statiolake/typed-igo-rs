@@ -75,7 +75,7 @@ macro_rules! define_enum {
             @enum $enum
             @at $at
             @argfeatures $argfeatures
-            @fields [$($fields)* (@value ($value) @ident ($($ident)*) @child (($($ident)*<'a>)) @matchchild ((_)) @parsechild (($($ident)*::parse($argfeatures))))]
+            @fields [$($fields)* (@value ($value) @ident ($($ident)*) @child (($($ident)*)) @matchchild ((_)) @parsechild (($($ident)*::parse($argfeatures))))]
             @value ()
             @rest $($rest)*
         }
@@ -120,35 +120,35 @@ macro_rules! define_enum {
      @value ()
      @rest) => {
         #[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
-        pub enum $enum<'a> {
+        pub enum $enum {
             $(
                 #[doc=$value]
                 $($ident)* $($child)*,
             )*
-
-            #[doc="定義されていない分類"]
-            Undefined(&'a str),
         }
 
-        impl ::std::fmt::Display for $enum<'_> {
+        impl ::std::fmt::Display for $enum {
             fn fmt(&self, b: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
                 #[allow(unused_variables, non_snake_case)]
                 match self {
                     $(
                         $enum::$($ident)* $($matchchild)* => ::std::fmt::Write::write_str(b, $value),
                     )*
-                    $enum::Undefined(undef) => ::std::fmt::Write::write_str(b, undef),
                 }
             }
         }
 
-        impl<'a> $enum<'a> {
-            pub fn parse<'b>($argfeatures: &'b [&'a str]) -> $enum<'a> {
+        impl $enum {
+            pub fn parse($argfeatures: &[&str]) -> $enum {
                 match $argfeatures[$at] {
                     $(
                         $value => $enum::$($ident)* $($parsechild)*,
                     )*
-                    other => $enum::Undefined(other),
+                    other => panic!(
+                        "BUG: `{value}` is undefined value for type {enum};  maybe the author of `typed-igo-rs` forget to add this value to type {enum}.  please report this issue.",
+                        value = other,
+                        enum = stringify!($enum)
+                    ),
                 }
             }
         }
@@ -161,8 +161,8 @@ include!("wordclass.rs");
 #[derive(Debug)]
 pub struct Morpheme<'input, 'dict> {
     pub surface: &'input str,
-    pub word_class: WordClass<'dict>,
-    pub conjugation: Conjugation<'dict>,
+    pub word_class: WordClass,
+    pub conjugation: Conjugation,
     pub original_form: &'dict str,
     pub reading: &'dict str,
     pub pronunciation: &'dict str,

@@ -112,13 +112,13 @@ pub mod conjugation {
     }
 
     #[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
-    pub struct Conjugation<'a> {
-        pub kind: ConjugationKind<'a>,
-        pub form: ConjugationForm<'a>,
+    pub struct Conjugation {
+        pub kind: ConjugationKind,
+        pub form: ConjugationForm,
     }
 
-    impl<'a> Conjugation<'a> {
-        pub fn parse<'b>(features: &'b [&'a str]) -> Conjugation<'a> {
+    impl Conjugation {
+        pub fn parse(features: &[&str]) -> Conjugation {
             Conjugation {
                 kind: ConjugationKind::parse(features),
                 form: ConjugationForm::parse(features),
