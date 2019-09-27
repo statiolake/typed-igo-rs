@@ -1,6 +1,7 @@
 #![recursion_limit = "1024"]
 
-use igo::Morpheme as IgoMorpheme;
+use igo::{Morpheme as IgoMorpheme, Tagger, ZipDir};
+use std::io::Cursor;
 
 macro_rules! define_enum {
     (pub enum $enum:ident $argfeatures:ident[$at:literal] { $($tts:tt)* }) => {
@@ -192,31 +193,41 @@ impl<'input, 'dict> From<IgoMorpheme<'dict, 'input>> for Morpheme<'input, 'dict>
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use igo::{Tagger, ZipDir};
-    use std::io::Cursor;
+pub struct Parser {
+    tagger: Tagger,
+}
 
-    #[test]
-    fn it_works() {
+impl Parser {
+    pub fn new() -> Parser {
         let dic = include_bytes!("ipadic.zip");
         let dic = Cursor::new(dic as &[u8]);
         let mut dic = ZipDir::new(dic).unwrap();
         let tagger = Tagger::load_from_dir(&mut dic).unwrap();
+        Parser { tagger }
+    }
 
-        let morphemes: Vec<_> = tagger
-            .parse("すもももももももものうち")
+    pub fn parse<'text, 'dict>(&'dict self, text: &'text str) -> Vec<Morpheme<'text, 'dict>> {
+        self.tagger
+            .parse(text)
             .into_iter()
             .map(Morpheme::from)
-            .collect();
+            .collect()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        let parser = Parser::new();
+
+        let morphemes = parser.parse("すもももももももものうち");
         println!("{:#?}", morphemes);
 
-        let morphemes: Vec<_> = tagger
-            .parse("日本の読者の皆様、こんにちは。日頃からウィキペディアをご利用いただきありがとうございます。 少し申し上げにくいのですが、この月曜日に、私たちには皆様のご支援が必要です。今年既にご寄付をくださった方には心から感謝しています。私たちは営業マンではありません。 平均 1,500円の寄付金が頼りですが、寄付してくださるのは全体の1%未満です。あなたが今日口にするコーヒー一杯分に相当する300円のご支援で、ウィキペディアは発展し続けられます。 どうぞよろしくお願いいたします。")
-            .into_iter()
-            .map(Morpheme::from)
-            .collect();
+        let morphemes = parser
+            .parse("日本の読者の皆様、こんにちは。日頃からウィキペディアをご利用いただきありがとうございます。 少し申し上げにくいのですが、この月曜日に、私たちには皆様のご支援が必要です。今年既にご寄付をくださった方には心から感謝しています。私たちは営業マンではありません。 平均 1,500円の寄付金が頼りですが、寄付してくださるのは全体の1%未満です。あなたが今日口にするコーヒー一杯分に相当する300円のご支援で、ウィキペディアは発展し続けられます。 どうぞよろしくお願いいたします。");
         println!("{:#?}", morphemes);
     }
 }
