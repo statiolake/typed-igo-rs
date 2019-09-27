@@ -86,6 +86,22 @@ macro_rules! define_enum {
      @fields [$($fields:tt)*]
      @value ($value:literal)
      @ident ($($ident:tt)*)
+     @rest ($vartype:tt) , $($rest:tt)*) => {
+        define_enum! {
+            @enum $enum
+            @at $at
+            @argfeatures $argfeatures
+            @fields [$($fields)* (@value ($value) @ident ($($ident)*) @child (($vartype)) @parsechild ((<$vartype>::parse($argfeatures))))]
+            @value ()
+            @rest $($rest)*
+        }
+    };
+    (@enum $enum:ident
+     @at $at:literal
+     @argfeatures $argfeatures:ident
+     @fields [$($fields:tt)*]
+     @value ($value:literal)
+     @ident ($($ident:tt)*)
      @rest $tt:tt $($rest:tt)*) => {
         define_enum! {
             @enum $enum
