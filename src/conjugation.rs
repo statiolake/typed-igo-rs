@@ -111,41 +111,6 @@ pub mod conjugation {
         }
     }
 
-    // impl ConjugationForm {
-    //     pub fn parse(features: &[&str]) -> ConjugationForm {
-    //         match features[5] {
-    //             "ガル接続" => ConjugationForm::Garu,
-    //             "仮定形" => ConjugationForm::Conditional,
-    //             "仮定縮約１" => ConjugationForm::ConditionalContraction1,
-    //             "仮定縮約２" => ConjugationForm::ConditionalContraction2,
-    //             "体言接続" => ConjugationForm::AttributiveConjunction,
-    //             "体言接続特殊" => ConjugationForm::SpecialAttributive,
-    //             "体言接続特殊２" => ConjugationForm::SpecialAttributive2,
-    //             "命令ｅ" => ConjugationForm::ImperativeE,
-    //             "命令ｉ" => ConjugationForm::ImperativeI,
-    //             "命令ｒｏ" => ConjugationForm::ImperativeRo,
-    //             "命令ｙｏ" => ConjugationForm::ImperativeYo,
-    //             "基本形" => ConjugationForm::Basic,
-    //             "基本形-促音便" => ConjugationForm::BasicSokuonbin,
-    //             "文語基本形" => ConjugationForm::OldBasic,
-    //             "未然ウ接続" => ConjugationForm::NegativeU,
-    //             "未然ヌ接続" => ConjugationForm::NegativeNu,
-    //             "未然レル接続" => ConjugationForm::NegativeReru,
-    //             "未然形" => ConjugationForm::Negative,
-    //             "未然特殊" => ConjugationForm::NegativeSpecial,
-    //             "現代基本形" => ConjugationForm::ModernBasic,
-    //             "連用ゴザイ接続" => ConjugationForm::ContinuousGozai,
-    //             "連用タ接続" => ConjugationForm::ContinuousTa,
-    //             "連用テ接続" => ConjugationForm::ContinuousTe,
-    //             "連用デ接続" => ConjugationForm::ContinuousDe,
-    //             "連用ニ接続" => ConjugationForm::ContinuousNi,
-    //             "連用形" => ConjugationForm::Continuous,
-    //             "音便基本形" => ConjugationForm::OnbinBasic,
-    //             other => ConjugationForm::Undefined(other.into()),
-    //         }
-    //     }
-    // }
-
     #[derive(Clone, Debug, PartialEq, Eq, Hash)]
     pub struct Conjugation {
         pub kind: ConjugationKind,
