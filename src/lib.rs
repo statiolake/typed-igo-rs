@@ -162,9 +162,9 @@ include!("wordclass.rs");
 #[derive(Debug)]
 pub struct Morpheme<'input, 'dict> {
     pub surface: &'input str,
-    pub word_class: WordClass,
+    pub wordclass: WordClass,
     pub conjugation: Conjugation,
-    pub original_form: &'dict str,
+    pub basic: &'dict str,
     pub reading: &'dict str,
     pub pronunciation: &'dict str,
     pub start: usize,
@@ -175,17 +175,17 @@ impl<'input, 'dict> From<IgoMorpheme<'dict, 'input>> for Morpheme<'input, 'dict>
         let surface = from.surface;
         let start = from.start;
         let features: Vec<_> = from.feature.split(',').collect();
-        let word_class = WordClass::parse(&*features);
+        let wordclass = WordClass::parse(&*features);
         let conjugation = Conjugation::parse(&*features);
-        let original_form = features[6];
+        let basic = features[6];
         let reading = features.get(7).unwrap_or(&"");
         let pronunciation = features.get(8).unwrap_or(&"");
 
         Morpheme {
             surface,
-            word_class,
+            wordclass,
             conjugation,
-            original_form,
+            basic,
             reading,
             pronunciation,
             start,
