@@ -215,6 +215,12 @@ impl Parser {
     }
 }
 
+impl Default for Parser {
+    fn default() -> Parser {
+        Parser::new()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
